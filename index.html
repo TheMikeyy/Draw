@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>AnyGesture</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="stage">
+    <video id="video" playsinline muted></video>
+    <canvas id="draw-canvas"></canvas>
+    <canvas id="skeleton-canvas"></canvas>
+
+    <div id="topbar">
+      <div id="status" class="idle">NOT STARTED</div>
+      <div id="debug"></div>
+    </div>
+    <div id="start-screen">
+      <h1>AnyGesture</h1>
+      <p id="start-text">Welcome, Click Start Camera to enter</p>
+      <button id="startBtn">Start Camera</button>
+    </div>
+  </div>
+
+  <div id="controls">
+    <label>Mode
+      <select id="modeSelect">
+        <option value="draw" selected>Drawing</option>
+        <option value="track">Tracking only</option>
+      </select>
+    </label>
+
+    <button id="clearBtn">Clear</button>
+
+    <label>Color
+      <select id="colorSelect">
+        <option value="#ffffff" selected>White</option>
+        <option value="#cfd6dc">Light Gray</option>
+        <option value="#ff4d4d">Red</option>
+        <option value="#4dd2ff">Cyan</option>
+        <option value="#ffe14d">Yellow</option>
+        <option value="#ff6dfa">Magenta</option>
+        <option value="#4dff88">Green</option>
+      </select>
+    </label>
+
+    <label>Tool
+      <select id="toolSelect">
+        <option value="pen" selected>Pen</option>
+        <option value="pencil">Pencil</option>
+        <option value="marker">Marker</option>
+      </select>
+    </label>
+
+    <label>Size <input id="sizeSlider" type="range" min="2" max="24" value="6"></label>
+
+    <label>Trace with
+      <select id="fingerSelect">
+        <option value="8" selected>Index finger</option>
+        <option value="12">Middle finger</option>
+        <option value="16">Ring finger</option>
+        <option value="20">Pinky finger</option>
+        <option value="-1">All four fingers</option>
+      </select>
+    </label>
+
+    <label>Smoothing <input id="sensSlider" type="range" min="10" max="90" value="50"></label>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands@0.4.1675469240/hands.js" crossorigin="anonymous"></script>
+  <script src="script.js"></script>
+</body>
+</html>
